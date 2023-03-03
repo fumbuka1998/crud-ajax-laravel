@@ -8,11 +8,19 @@ use Illuminate\Support\Facades\Validator;
 
 class StudentController extends Controller
 {
-    public static function index(){
+    public function index(){
         return view('student.index');
     }
 
-    public static function store(Request $request){
+    public function fetchStudents(){
+        $student = Student::all();
+
+        return response()->json([
+            'students'=>$student,
+        ]);
+    }
+
+    public function store(Request $request){
         $validator = Validator::make($request->all(), [
             'name'=>'required|max:200',
             'email'=>'required|email|max:200',

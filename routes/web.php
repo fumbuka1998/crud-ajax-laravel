@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('students', [StudentController::class, 'index']);
+Route::get('fetchstudents', [StudentController::class, 'fetchStudents']);
 Route::post('studentstore', [StudentController::class, 'store']);
 
 Route::get('/', function () {
