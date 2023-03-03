@@ -38,9 +38,15 @@
         </div>
     </div>
     {{-- end of add student modal --}}
-
+    
     <div class="container py-5">
         <div class="row">
+            <div class="container text-md-center">
+                <h2 class="barge bg-primary text-light">
+                    STUDENTS MANEGER
+                </h2>
+            </div>
+            
             <div class="col-md-12">
                 {{-- the div tag below display the  success message from ajax response --}}
                 <div id="success_message"></div>
@@ -55,7 +61,7 @@
                     </div>
                     <div class="card-body">
 
-                        <table class="table table-bordered  table-striper">
+                        <table class="table table-bordered  table-striper table-hover">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -114,8 +120,6 @@
                     }
                 });
             }
-
-
 
             $(document).on('click', '.add_student', function(e) {
                 e.preventDefault();
