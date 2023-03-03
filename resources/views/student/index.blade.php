@@ -90,12 +90,12 @@ $(document).ready(function(){
         // console.log(data)
         $.ajax({
             type:'POST',
-            url: '/students',
+            url: '/studentstore',
             data: data,
             datatype: 'json',
             success: function(response){
                 // console.log(response);
-                if(response.status = 400){
+                if(response.status == 400){
                     $('#saveform_errlist').html("");
                     $('#saveform_errlist').addClass('alert alert-danger');
                     $.each(response.error, function(key, err_values){
@@ -105,6 +105,7 @@ $(document).ready(function(){
                     } );
                 }
                 else{
+                    
                     $('#saveform_errlist').html("");
                     $('#success_message').addClass('alert alert-success');
                     $('#success_message').text(response.message);
